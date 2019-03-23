@@ -93,14 +93,14 @@ The ["denoise gentle" recipe by @Kane_Davis](https://discuss.pixls.us/t/darktabl
 MODULE | PARAMETERS                    | BLENDING     |NOTES
 -------|-------------------------------|--------------|--------------
 Lowpass| Radius=15                     | uniform      | 1st instance
--      | Gaussian                      | mode=Lab-A   |
--      | Contrast=0.93                 | opacity=100% |
--      | Brightness=0.03  ||
--      | Saturation=1.0   ||
+(...)  | Gaussian                      | mode=Lab-A   |
+(...)      | Contrast=0.93                 | opacity=100% |
+(...)       | Brightness=0.03  ||
+(...)       | Saturation=1.0   ||
 Lowpass| (same as above)               | uniform      | 2nd instance
--      |                       | mode=Lab-B   |
--      |                  | opacity=100% |
+(...)       |                       | mode=Lab-B   |
+(...)       |                  | opacity=100% |
 Equalizer | stock preset 'denoise luma only'
--         | mix 1.0
+(...)          | mix 1.0
 
 
