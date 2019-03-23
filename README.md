@@ -81,3 +81,26 @@ Effect: Sharpen out-of-focus objects
 Effect: Mask irregular areas (better description needed)
 
 * Modules _shadows and highlights_ and _tonecurve_, drawn & parametric mask, combine: exclusive, add path: draw a path outside the irregular area, Select L channel, Adjust markers
+  
+***
+
+**test alternative format using tables**
+
+
+The ["denoise gentle" recipe by @Kane_Davis](https://discuss.pixls.us/t/darktable-tricks/7903/8). Increase/decrease Equalizer mix for fine tuning.
+
+
+MODULE | PARAMETERS                    | BLENDING     |NOTES
+-------|-------------------------------|--------------|--------------
+Lowpass| Radius=15                     | uniform      | 1st instance
+-      | Gaussian                      | mode=Lab-A   |
+-      | Contrast=0.93                 | opacity=100% |
+-      | Brightness=0.03  ||
+-      | Saturation=1.0   ||
+Lowpass| (same as above)               | uniform      | 2nd instance
+-      |                       | mode=Lab-B   |
+-      |                  | opacity=100% |
+Equalizer | stock preset 'denoise luma only'
+-         | mix 1.0
+
+
