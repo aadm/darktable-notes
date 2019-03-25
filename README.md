@@ -8,6 +8,11 @@ Guidelines for severely underexposed, high-ISO images; may be especially useful 
 
 * _exposure_, strength according to taste, black=slightly positive values (e.g., 0.0020 / 0.0040)
 
+Dramatic sky, from [@s7habo's Editing Moments Episode #3](https://www.youtube.com/watch?v=8Rhd5UtpYW4):
+
+* *channel mixer*, destination=gray, red=(increase) blue=(decrease), blend=drawn mask with a gradient matching the sky, blend mode=HSV ligthness
+* _haze removal_, decrease opacity
+
 ## SHARPENING
 
 * _sharpen_, radius=0.7, amount=1.5, threshold=1, blend parametric, mode=lab lightness, opacity=100%; Parametric mask: L, input upper triangle left+10, right-10, mask refinement feath radius 0, mask blur 2.
