@@ -21,8 +21,8 @@ Dramatic sky, from [@s7habo's Editing Moments Episode #3](https://www.youtube.co
 
 The official recipe suggested in [DT's manual](https://darktable.gitlab.io/doc/en/correction_group.html#denoise_profiled) (parameters to be further customized according to user choice); the first instance reduce chroma (color) noise, the second luma (lightness) noise. Wavelet is particularly good for removing color noise but can be also used for luma (lightness) noise.
 
-* _denoise (profiled)_, mode=wavelets, strength=1.0, blend mode=color or HSV color, opacity=100%
-* _denoise (profiled)_, mode=non-local means, patch-size=4, strength=4, blend mode=lightness or HSV Lightness, opacity=40%
+* _denoise (profiled)_ 1st instance, mode=wavelets, strength=1.0, blend mode=color or HSV color, opacity=100%
+* _denoise (profiled)_ 2nd instance, mode=non-local means, patch-size=4, strength=4, blend mode=lightness or HSV Lightness, opacity=40%
 
 The ["denoise triple" recipe by @asn](https://discuss.pixls.us/t/darktable-tricks/7903/6)
 
