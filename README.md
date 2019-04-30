@@ -55,17 +55,31 @@ Other resources:
  * Tomas Sobek's page: <https://tomassobekphotography.co.nz/articles/reducing-noise-in-Darktable.php>
  * video tutorial by rawfiner: <https://youtu.be/RMbbLyKqdLY>
 
+
 ## SHADOWS AND HIGHLIGHTS / DODGING AND BURNING
 
 In combination or as an alternative to shadow/highlights, use the following recipe to raise shadows for example without getting the halos common in the Shadow/Highlight module.
 
 * Exposure module, +1 EV, parametric mask on L channel to apply only in darker areas o lighter areas.
 
+
 ## black and white
 
 Using [color zones module](https://www.mail-archive.com/darktable-dev@lists.darktable.org/msg03788.html):
 
 * _color zones_, saturation=0 (or use preset "black and white film"), lightness tab to choose which color should be light or dark.
+
+## MASKS
+
+@msd and @houz from [a discuss.pixls.us thread](https://discuss.pixls.us/t/sqsa-darktable-short-question-short-answer/5103):
+
+* Luminosity mask on the output values instructs Darktable to select pixels with values
+_after_ processing the image (e.g., increasing the exposure) will be in the specified range.
+If raising the exposure by 0.7EV, some parts of the image have luminance still in the range specified for output.
+But maybe rasing the exposure by 2.0EV the luminance will be much higher so these portions will be excluded from the mask.
+
+* In almost all cases you want to use the input slider and leave the output slider alone.
+
 
 
 ## MISC EFFECTS FROM CLAES
