@@ -17,6 +17,14 @@ Dramatic sky, from [@s7habo's Editing Moments Episode #3](https://www.youtube.co
 
 * _sharpen_, radius=0.7, amount=1.5, threshold=1, blend parametric, mode=lab lightness, opacity=100%; Parametric mask: L, input upper triangle left+10, right-10, mask refinement feath radius 0, mask blur 2.
 
+check also: https://www.dpreview.com/forums/post/60562600?image=0
+
+
+## structure/clarity
+
+https://www.dpreview.com/forums/post/60562788?image=0
+
+
 ## NOISE REDUCTION
 
 The official recipe suggested in [DT's manual](https://darktable.gitlab.io/doc/en/correction_group.html#denoise_profiled) (parameters to be further customized according to user choice); the first instance reduce chroma (color) noise, the second luma (lightness) noise. Wavelet is particularly good for removing color noise but can be also used for luma (lightness) noise.
