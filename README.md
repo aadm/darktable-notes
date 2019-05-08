@@ -24,7 +24,6 @@ check also: https://www.dpreview.com/forums/post/60562600?image=0
 
 https://www.dpreview.com/forums/post/60562788?image=0
 
-
 ## NOISE REDUCTION
 
 The official recipe suggested in [DT's manual](https://darktable.gitlab.io/doc/en/correction_group.html#denoise_profiled) (parameters to be further customized according to user choice); the first instance reduce chroma (color) noise, the second luma (lightness) noise. Wavelet is particularly good for removing color noise but can be also used for luma (lightness) noise.
@@ -60,16 +59,15 @@ Guidelines on using Denoise module:
 * Denoise (non-local means): starting point=1/10th ISO luma, 2x chroma (e.g, if ISO 160 --> luma 16% chroma 32%)
 
 Other resources:
- * Tomas Sobek's page: <https://tomassobekphotography.co.nz/articles/reducing-noise-in-Darktable.php>
- * video tutorial by rawfiner: <https://youtu.be/RMbbLyKqdLY>
 
+* Tomas Sobek's page: <https://tomassobekphotography.co.nz/articles/reducing-noise-in-Darktable.php>
+* video tutorial by rawfiner: <https://youtu.be/RMbbLyKqdLY>
 
 ## SHADOWS AND HIGHLIGHTS / DODGING AND BURNING
 
 In combination or as an alternative to shadow/highlights, use the following recipe to raise shadows for example without getting the halos common in the Shadow/Highlight module.
 
 * Exposure module, +1 EV, parametric mask on L channel to apply only in darker areas o lighter areas.
-
 
 ## black and white
 
@@ -88,7 +86,11 @@ But maybe rasing the exposure by 2.0EV the luminance will be much higher so thes
 
 * In almost all cases you want to use the input slider and leave the output slider alone.
 
+## VIGNETTING AND OTHER EFFECTS
 
+Vignetting according to @mica from [discuss.pixls.us](https://discuss.pixls.us/t/what-do-you-have-in-your-fav-list-and-why/12485/2):
+
+* _vignette_, parametric mask on L channel with value=15%.
 
 ## MISC EFFECTS FROM CLAES
 
@@ -115,3 +117,24 @@ Effect: Sharpen out-of-focus objects
 Effect: Mask irregular areas (better description needed)
 
 * Modules _shadows and highlights_ and _tonecurve_, drawn & parametric mask, combine: exclusive, add path: draw a path outside the irregular area, Select L channel, Adjust markers
+
+## batch scripts etc
+
+To organize styles use hierarchical naming convention (supported from DT 2.6.2 for sure, not sure about earlier versions).
+
+When downloading a bunch of styles, make sure to change the `<name>` tag to something that includes the `|` character to create categories.
+
+For example, the Fuji styles downloadable from <https://blog.sowerby.me/fuji-film-simulation-profiles/> can be modified with the following bash script 
+
+```bash
+#!/bin/bash
+OIFS="$IFS"
+IFS=$'\n'
+for file in `find . -type f -name "*.dtstyle"`
+do
+    echo "file = $file"
+    sed 's/<name>Fuji XTrans III - /<name>Fuji XTrans III|/g' "$file">temp.dat
+    mv temp.dat "$file"
+done
+IFS="$OIFS"
+```
