@@ -2,6 +2,8 @@
 
 A collection of tips, tricks and recipes for Darktable. Inspired by [this thread on pixls.us](https://discuss.pixls.us/t/darktable-tricks/7903).
 
+
+
 ## EXPOSURE
 
 Guidelines for severely underexposed, high-ISO images; may be especially useful for older or small sensors (e.g. APS-C sensor in Nikon D7000 or Fuji cameras at >=3200 ISO). To avoid fake bluish/purple tint of very digital noise in very dark portions of the frame increase the blacks slider of a tiny percentage to effectively "crush the blacks" and avoid resorting to complicated techniques to deal with noise in those areas.
