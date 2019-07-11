@@ -17,14 +17,27 @@ Dramatic sky, from [@s7habo's Editing Moments Episode #3](https://www.youtube.co
 
 ## SHARPENING
 
-* _sharpen_, radius=0.7, amount=1.5, threshold=1, blend parametric, mode=lab lightness, opacity=100%; Parametric mask: L, input upper triangle left+10, right-10, mask refinement feath radius 0, mask blur 2.
+* _sharpen_, radius=0.7, amount=1.5, threshold=1, blend=parametric, blend mode=lab lightness, opacity=100%; Parametric mask: L, input upper triangle left+10, right-10, mask refinement feath radius 0, mask blur 2.
+
+* _sharpen_, radius=0.9, amount=1.2, threshold=0.5, blend=parametric, blend mode=lab lightness, opacity=100%; Parametric mask: L, input 0-15-85-100, mask refinement feath radius 0, mask blur 2.
 
 check also: https://www.dpreview.com/forums/post/60562600?image=0
 
 
 ## structure/clarity
 
-https://www.dpreview.com/forums/post/60562788?image=0
+* _local contrast_, mode=bilateral grid, detail=160%, coarseness=15, contrast=60, blend=parametric, mode=normal, opacity=100%; Parametric mask: L, input 0-88-100-100.
+
+Clarity:
+
+* _local contrast_, mode=local laplacian filter, detail=150%, highlights=90%, shadows=100%, midtone range=0.2, blend=parametric, blend mode=Lab lightness, opacity=100%; Parametric mask: L, output=0-10-90-100, input 0-0-100-100.
+
+Structure enhancement:
+
+* _highpass_, sharpness=20%, contrast boost=10%, blend=parametric, blend mode=softlight, opacity=100%; Parametric mask: L, input 0-20-90-100.
+
+
+
 
 ## NOISE REDUCTION
 
