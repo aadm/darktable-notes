@@ -2,32 +2,6 @@
 
 A collection of tips, tricks and recipes for Darktable. Inspired by [this thread on pixls.us](https://discuss.pixls.us/t/darktable-tricks/7903).
 
-## My doubts about Darktable's workflow
-
-rgbcurve vs LAB tone curve; is working with tone curve in LAB mode deprecated? Is tone curve in RGB mode the same as RGB curve module?
-
-proper workflow is: base curve + tone curve / rgb curve (the easy way) or filmic rgb+tone equalizer. This second way would avoid the user to use shadow/highlights, tone / rgb curves altogether correct?
-
-working with tone/rgb curve or filmic rgb I've gotten used to "fix" the oversaturation issues (that I was happily leaving it in place in Lightroom I remember and thought that this was a natural and desired consequence, until DT's develeoped told us "careful! this increase in saturation is a by-product, is something conceptually 'wrong') but then how do I go adding back some saturation? Is velvia a good module to use (to me it seems like a module that adds the saturation in all the correct places; for instance vibrance I'm not sure what to make of it, while I distinctly rememebr that in LR this was the slider to use as opposed to saturation; in DT it seems to me like vibrance doesn't do much)? Is the saturation slider in the new color balance module the one to use?
-
-correcting color casts etc; I was used to work in tone curve in LAB mode and adjust the A/B curves but how do I do this if I'm not using tone curves altogether?
-
-sequence:
-
-* white balance -> filmic rgb -> exposure -> color corrections
-
-After exposure:
-checked using the global color picker Lab readings a
-
-
- pixel has a luminance higher than 100 %
-no pixel has a luminance lower than 0 % (that is not always possible)
-no pixel on the subject has a luminance lower than 16-18 % and higher than 92-96 % (excepted deliberate use of low-key or high-key)
-white skins have an average luminance of 65-85 %
-black skins have an average luminance of 25-45 %
-tanned skins have an average luminance of 45-65 %
-non-human subjects have an average luminance around 50 % (excepted deliberate use of low-key or high-key)
-
 ## notes from the forum
 
 The purple flare with grid artifacts
@@ -123,21 +97,25 @@ https://github.com/darktable-org/darktable/pull/3075
 
 ## Workflow
 
-- exposure
-- white balance
-- color profiles / LUT
-- filmic (tones)
-- color balance (colors)
-- denoising and enhancements as you please.
-
-(maybe exposure after filmic)
 
 ## FILMICRGB
 
 ## TONE EQUALIZER
 
 masking / luminance estimator: RGB Euclidean Norm
+
 ## EXPOSURE
+
+Check using the global color picker Lab reading:
+
+* no pixel has a luminance >100% or <0%
+* no pixel on the subject has luminance <16-18% and >92-96% (*)
+* white skins have an average luminance of 65-85 %
+* black skins have an average luminance of 25-45 %
+* tanned skins have an average luminance of 45-65 %
+* non-human subjects have an average luminance around 50 % (*)
+ 
+(*) except deliberate use of low-key or high-key.
 
 Guidelines for severely underexposed, high-ISO images; may be especially useful for older or small sensors (e.g. APS-C sensor in Nikon D7000 or Fuji cameras at >=3200 ISO). To avoid fake bluish/purple tint of very digital noise in very dark portions of the frame increase the blacks slider of a tiny percentage to effectively "crush the blacks" and avoid resorting to complicated techniques to deal with noise in those areas.
 
@@ -224,8 +202,10 @@ In combination or as an alternative to shadow/highlights, use the following reci
 
 ## black and white
 
-Using [color zones module](https://www.mail-archive.com/darktable-dev@lists.darktable.org/msg03788.html):
+Modules to use:
 
+* monochrome
+* channel mixer, destination _gray_
 * _color zones_, saturation=0 (or use preset "black and white film"), lightness tab to choose which color should be light or dark.
 
 ## MASKS
